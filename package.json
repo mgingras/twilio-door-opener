@@ -1,0 +1,23 @@
+{
+  "name": "twilio-door-opener",
+  "version": "1.0.0",
+  "description": "Automatically respond to door buzzer and open the door",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mgingras/twilio-door-opener.git"
+  },
+  "author": "Martin Gingras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgingras/twilio-door-opener/issues"
+  },
+  "homepage": "https://github.com/mgingras/twilio-door-opener",
+  "dependencies": {
+    "newrelic": "^1.18.0",
+    "twilio": "^1.11.1"
+  }
+}
