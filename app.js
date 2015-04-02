@@ -3,10 +3,12 @@ config = require('./config.json'),
 http   = require('http'),
 twilio = require('twilio'),
 client = require('twilio')(config.ACCOUNT_SID, config.AUTH_TOKEN),
-port   = process.env.PORT || 3000;
+port   = (process.env.PORT || 3000),
+url    = require('url');
 
 http.createServer(function (req, res) {
-  console.dir(req);
+  var query = url.parse(req.url, true).query;
+  console.dir(query);
   //Create TwiML response
   var twiml = new twilio.TwimlResponse();
   twiml.say('Yo mother fucker come on up to suite 522', {
