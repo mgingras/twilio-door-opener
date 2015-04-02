@@ -11,3 +11,4 @@ The app filters so only calls from the front door phone number will get the mess
 2. Rename, sample_config.json to config.json and fill in the appropriate slots.
 3. Deploy to Heroku.
 4. Configure New Relic to ping app for availablity to keep app from sleeping.
+5. Point your Twilio number @ the URL for your Heroku app.
