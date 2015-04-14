@@ -9,10 +9,9 @@ url    = require('url');
 http.createServer(function (req, res) {
   var query = url.parse(req.url, true).query;
   console.dir(query);
+  //Create TwiML response
+  var twiml = new twilio.TwimlResponse();
   if(query.From === config.FRONT_DOOR_NUMBER){
-
-    //Create TwiML response
-    var twiml = new twilio.TwimlResponse();
     twiml.say('Hey, come up to suite ' + config.SUITE_NUMBER, {
       voice:'woman',
       language:'en-gb'
@@ -38,8 +37,7 @@ http.createServer(function (req, res) {
       }
     });
   } else {
-    var twiml = new twilio.TwimlResponse();
-    twiml.dial(config.RECIPIENT);
+    twiml.dial(config.RECIPIENT); // Forward call to recipients number if not from front door
     res.writeHead(200, {'Content-Type': 'text/xml'});
     res.end(twiml.toString());
   }
