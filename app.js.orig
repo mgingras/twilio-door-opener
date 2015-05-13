@@ -11,6 +11,9 @@ http.createServer(function (req, res) {
   console.dir(query);
   //Create TwiML response
   var twiml = new twilio.TwimlResponse();
+<<<<<<< HEAD
+  if(query.From === config.FRONT_DOOR_NUMBER){
+=======
   // If text message
   if(query.MessageSid){
     // Forward the SMS text message
@@ -26,6 +29,7 @@ http.createServer(function (req, res) {
       }
     });
   } else if(query.From === config.FRONT_DOOR_NUMBER){
+>>>>>>> deploy
     twiml.say('Hey, come up to suite ' + config.SUITE_NUMBER, {
       voice:'woman',
       language:'en-gb'
@@ -45,7 +49,12 @@ http.createServer(function (req, res) {
       }, function(err, text) { //this function is executed when a response is received from Twilio
       if(err){
         console.dir(err);
+<<<<<<< HEAD
+      }
+      if (!err) { // "err" is an error received during the request, if any
+=======
       } else { // "err" is an error received during the request, if any
+>>>>>>> deploy
         console.log('Sent text to ' + config.RECIPIENT);
       }
     });
