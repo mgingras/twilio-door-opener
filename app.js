@@ -32,7 +32,7 @@ http.createServer(function (req, res) {
     });
     twiml.pause();
     twiml.play({digits:'6'});
-    twiml.pause('5');
+    twiml.pause();
 
     res.writeHead(200, {'Content-Type': 'text/xml'});
     res.end(twiml.toString());
